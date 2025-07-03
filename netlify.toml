@@ -1,6 +1,6 @@
 [build]
     publish = "build"
-    base = "frontend" # The base directory for your project.command = "npm run build"
+    base = "" # The base directory for your project.command = "npm run build"
 
 [[redirects]]
     from = "/*"
