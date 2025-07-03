@@ -5,9 +5,10 @@ import { Input } from './ui/input';
 import { Textarea } from './ui/textarea';
 import { Label } from './ui/label';
 import { useToast } from '../hooks/use-toast';
-import { submitContactForm } from '../data/mockData';
 import { Mail, Phone, MapPin, Send, Loader2 } from 'lucide-react';
-import { portfolioData } from '../data/mockData';
+import { portfolioData } from '../data/portfolio.data';
+import emailjs from '@emailjs/browser';
+import { EMAILJS_CONFIG, createEmailParams, validateEmailJSConfig } from '../config/emailjs';
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -33,12 +34,26 @@ const Contact = () => {
     setIsSubmitting(true);
 
     try {
-      const result = await submitContactForm(formData);
+      // Validate EmailJS configuration
+      if (!validateEmailJSConfig()) {
+        throw new Error('EmailJS configuration is incomplete');
+      }
+
+      // Create email parameters using the helper function
+      const templateParams = createEmailParams(formData, personal.name);
+
+      // Send email using EmailJS
+      const result = await emailjs.send(
+        EMAILJS_CONFIG.SERVICE_ID,
+        EMAILJS_CONFIG.TEMPLATE_ID,
+        templateParams,
+        EMAILJS_CONFIG.PUBLIC_KEY
+      );
       
-      if (result.success) {
+      if (result.status === 200) {
         toast({
-          title: "Message Sent!",
-          description: result.message,
+          title: "Message Sent Successfully!",
+          description: "Thank you for reaching out. I'll get back to you soon!",
         });
         
         // Reset form
@@ -50,9 +65,10 @@ const Contact = () => {
         });
       }
     } catch (error) {
+      console.error('EmailJS Error:', error);
       toast({
-        title: "Error",
-        description: "Failed to send message. Please try again.",
+        title: "Error Sending Message",
+        description: "Failed to send message. Please try again or contact me directly.",
         variant: "destructive",
       });
     } finally {

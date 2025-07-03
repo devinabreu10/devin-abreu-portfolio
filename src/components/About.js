@@ -1,7 +1,7 @@
 import React from 'react';
 import { Card, CardContent } from './ui/card';
 import { Badge } from './ui/badge';
-import { portfolioData } from '../data/mockData';
+import { portfolioData } from '../data/portfolio.data';
 
 const About = () => {
   const { personal } = portfolioData;
@@ -93,13 +93,13 @@ const About = () => {
               <div className="grid grid-cols-2 gap-4 mt-6">
                 <Card className="border-0 shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105">
                   <CardContent className="p-6 text-center">
-                    <div className="text-3xl font-bold text-primary mb-2">8+</div>
+                    <div className="text-3xl font-bold text-primary mb-2">3+</div>
                     <div className="text-sm text-muted-foreground">Years Experience</div>
                   </CardContent>
                 </Card>
                 <Card className="border-0 shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105">
                   <CardContent className="p-6 text-center">
-                    <div className="text-3xl font-bold text-primary mb-2">50+</div>
+                    <div className="text-3xl font-bold text-primary mb-2">15+</div>
                     <div className="text-sm text-muted-foreground">Projects Completed</div>
                   </CardContent>
                 </Card>

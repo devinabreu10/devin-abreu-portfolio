@@ -1,13 +1,13 @@
 // Mock data for portfolio
 export const portfolioData = {
   personal: {
-    name: "Alex Morgan",
-    title: "Senior Software Developer",
+    name: "Devin Abreu",
+    title: "Software Developer",
     industry: "Banking & Financial Services",
-    location: "New York, NY",
-    email: "alex.morgan@email.com",
+    location: "Cypress, TX",
+    email: "devinabreu99@outlook.com",
     phone: "+1 (555) 123-4567",
-    bio: "Passionate software developer with 8+ years of experience building robust, scalable applications for the banking industry. Specialized in developing secure financial systems, payment processing platforms, and regulatory compliance solutions. Committed to writing clean, maintainable code and staying current with emerging technologies in fintech.",
+    bio: "Passionate software developer with 3+ years of experience building robust, scalable applications for the banking industry.Committed to writing clean, maintainable code and staying current with emerging technologies in fintech.",
     skills: [
       "Java", "Python", "JavaScript", "React", "Node.js", "Spring Boot",
       "MongoDB", "PostgreSQL", "AWS", "Docker", "Kubernetes", "Git",
@@ -15,9 +15,8 @@ export const portfolioData = {
       "Regulatory Compliance", "Security Best Practices"
     ],
     socialLinks: {
-      linkedin: "https://linkedin.com/in/alexmorgan",
-      github: "https://github.com/alexmorgan",
-      twitter: "https://twitter.com/alexmorgan"
+      linkedin: "https://www.linkedin.com/in/devin-abreu/",
+      github: "https://github.com/devinabreu10",
     }
   },
   

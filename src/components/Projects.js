@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Card, CardContent, CardHeader, CardTitle } from './ui/card';
 import { Button } from './ui/button';
 import { Badge } from './ui/badge';
-import { portfolioData } from '../data/mockData';
+import { portfolioData } from '../data/portfolio.data';
 import { ExternalLink, Github, Filter } from 'lucide-react';
 
 const Projects = () => {

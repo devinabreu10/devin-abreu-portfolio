@@ -18,7 +18,7 @@ module.exports = {
       if (config.disableHotReload) {
         // Remove hot reload related plugins
         webpackConfig.plugins = webpackConfig.plugins.filter(plugin => {
-          return !(plugin.constructor.name === 'HotModuleReplacementPlugin');
+          return (plugin.constructor.name !== 'HotModuleReplacementPlugin');
         });
         
         // Disable watch mode

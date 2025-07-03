@@ -1,7 +1,7 @@
 import React from 'react';
 import { Button } from './ui/button';
 import { Badge } from './ui/badge';
-import { portfolioData } from '../data/mockData';
+import { portfolioData } from '../data/portfolio.data';
 import { ChevronDown, Github, Linkedin, Mail } from 'lucide-react';
 
 const Hero = () => {
