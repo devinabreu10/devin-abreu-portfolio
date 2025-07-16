@@ -44,7 +44,7 @@ const Hero = () => {
 
           {/* Bio */}
           <p className="max-w-2xl mx-auto text-lg text-muted-foreground leading-relaxed">
-            {personal.bio.substring(0, 200)}...
+            {personal.bio}
           </p>
 
           {/* CTA Buttons */}
@@ -69,10 +69,10 @@ const Hero = () => {
 
           {/* Social Links */}
           <div className="flex justify-center space-x-6 pt-8">
-            <a href={personal.socialLinks.github} className="text-muted-foreground hover:text-primary transition-colors duration-300 hover:scale-110 transform">
+            <a href={personal.socialLinks.github} className="text-muted-foreground hover:text-primary transition-colors duration-300 hover:scale-110 transform" target="_blank" rel="noopener noreferrer">
               <Github size={24} />
             </a>
-            <a href={personal.socialLinks.linkedin} className="text-muted-foreground hover:text-primary transition-colors duration-300 hover:scale-110 transform">
+            <a href={personal.socialLinks.linkedin} className="text-muted-foreground hover:text-primary transition-colors duration-300 hover:scale-110 transform" target="_blank" rel="noopener noreferrer">
               <Linkedin size={24} />
             </a>
             <a href={`mailto:${personal.email}`} className="text-muted-foreground hover:text-primary transition-colors duration-300 hover:scale-110 transform">

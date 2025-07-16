@@ -99,8 +99,7 @@ const Contact = () => {
                 <h3 className="text-2xl font-bold mb-6">Let's Connect</h3>
                 <p className="text-muted-foreground mb-8 leading-relaxed">
                   I'm always interested in hearing about new opportunities, 
-                  innovative projects, or just having a conversation about technology. 
-                  Feel free to reach out through any of the channels below.
+                  innovative projects, or just having a conversation about technology.
                 </p>
               </div>
 
@@ -120,7 +119,7 @@ const Contact = () => {
                   </CardContent>
                 </Card>
 
-                <Card className="border-0 shadow-md hover:shadow-lg transition-shadow duration-300">
+                {/* <Card className="border-0 shadow-md hover:shadow-lg transition-shadow duration-300">
                   <CardContent className="p-6">
                     <div className="flex items-center space-x-4">
                       <div className="p-3 bg-primary/10 rounded-lg">
@@ -146,7 +145,7 @@ const Contact = () => {
                       </div>
                     </div>
                   </CardContent>
-                </Card>
+                </Card> */}
               </div>
 
               {/* Response Time */}
