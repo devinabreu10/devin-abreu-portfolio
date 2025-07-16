@@ -16,7 +16,7 @@ const About = () => {
               About <span className="text-primary">Me</span>
             </h2>
             <p className="text-xl text-muted-foreground">
-              Crafting innovative solutions in the financial technology space
+              Developing innovative solutions in the technology space
             </p>
           </div>
 
@@ -28,23 +28,38 @@ const About = () => {
                   <h3 className="text-2xl font-semibold mb-4 text-primary">My Story</h3>
                   <div className="space-y-4 text-muted-foreground leading-relaxed">
                     <p>{personal.bio}</p>
-                    <p>
+                    {/* <p>
                       With a deep understanding of financial systems and regulatory requirements, 
                       I bridge the gap between complex business needs and technical solutions. 
                       My experience spans from building high-frequency trading systems to 
                       developing customer-facing banking applications.
-                    </p>
+                    </p> */}
                     <p>
                       I'm passionate about clean code, system architecture, and continuous learning. 
-                      When I'm not coding, you'll find me exploring new technologies or 
-                      contributing to open-source projects.
+                      When I'm not coding, you'll find me exploring new technologies and learning new skills.
                     </p>
                   </div>
                 </CardContent>
               </Card>
 
+              {/* Quick Stats */}
+              <div className="grid grid-cols-2 gap-4 mt-6">
+                <Card className="border-0 shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105">
+                  <CardContent className="p-6 text-center">
+                    <div className="text-3xl font-bold text-primary mb-2">3+</div>
+                    <div className="text-sm text-muted-foreground">Years Experience</div>
+                  </CardContent>
+                </Card>
+                <Card className="border-0 shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105">
+                  <CardContent className="p-6 text-center">
+                    <div className="text-3xl font-bold text-primary mb-2">15+</div>
+                    <div className="text-sm text-muted-foreground">Projects Completed</div>
+                  </CardContent>
+                </Card>
+              </div>
+
               {/* Contact Info */}
-              <Card className="border-0 shadow-lg hover:shadow-xl transition-shadow duration-300">
+              {/* <Card className="border-0 shadow-lg hover:shadow-xl transition-shadow duration-300">
                 <CardContent className="p-8">
                   <h3 className="text-2xl font-semibold mb-4 text-primary">Get In Touch</h3>
                   <div className="space-y-3">
@@ -62,7 +77,7 @@ const About = () => {
                     </div>
                   </div>
                 </CardContent>
-              </Card>
+              </Card> */}
             </div>
 
             {/* Skills Section */}
@@ -88,22 +103,6 @@ const About = () => {
                   </div>
                 </CardContent>
               </Card>
-
-              {/* Quick Stats */}
-              <div className="grid grid-cols-2 gap-4 mt-6">
-                <Card className="border-0 shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105">
-                  <CardContent className="p-6 text-center">
-                    <div className="text-3xl font-bold text-primary mb-2">3+</div>
-                    <div className="text-sm text-muted-foreground">Years Experience</div>
-                  </CardContent>
-                </Card>
-                <Card className="border-0 shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105">
-                  <CardContent className="p-6 text-center">
-                    <div className="text-3xl font-bold text-primary mb-2">15+</div>
-                    <div className="text-sm text-muted-foreground">Projects Completed</div>
-                  </CardContent>
-                </Card>
-              </div>
             </div>
           </div>
         </div>

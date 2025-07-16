@@ -1,13 +1,13 @@
-// Mock data for portfolio
+// Static data for portfolio
 export const portfolioData = {
   personal: {
     name: "Devin Abreu",
     title: "Software Developer",
-    industry: "Banking & Financial Services",
+    industry: "Full-Stack Development",
     location: "Cypress, TX",
     email: "devinabreu99@outlook.com",
     phone: "+1 (555) 123-4567",
-    bio: "Passionate software developer with 3+ years of experience building robust, scalable applications for the banking industry.Committed to writing clean, maintainable code and staying current with emerging technologies in fintech.",
+    bio: "Passionate software developer with 3+ years of experience building robust, scalable enterprise applications. Committed to writing clean, maintainable code and staying up to date with emerging technologies.",
     skills: [
       "Java", "Python", "JavaScript", "React", "Node.js", "Spring Boot",
       "MongoDB", "PostgreSQL", "AWS", "Docker", "Kubernetes", "Git",
