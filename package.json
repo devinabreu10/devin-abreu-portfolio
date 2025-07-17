@@ -1,6 +1,6 @@
 {
-  "name": "frontend",
-  "version": "0.1.0",
+  "name": "devin-abreu-portfolio",
+  "version": "1.0.0",
   "private": true,
   "dependencies": {
     "@emailjs/browser": "^4.4.1",
@@ -34,6 +34,7 @@
     "@radix-ui/react-tooltip": "^1.2.4",
     "ajv": "^6.12.6",
     "ajv-keywords": "^3.5.2",
+    "aws-cdk": "^2.1021.0",
     "axios": "^1.8.4",
     "caniuse-lite": "^1.0.30001726",
     "class-variance-authority": "^0.7.1",
@@ -61,7 +62,13 @@
   "scripts": {
     "start": "craco start",
     "build": "craco build",
-    "test": "craco test"
+    "test": "craco test",
+    "deploy:local": "npm run build && aws --endpoint-url=http://localhost:4566 s3 sync build/ s3://devin-portfolio-localstack --delete",
+    "deploy:local:create": "aws --endpoint-url=http://localhost:4566 s3 mb s3://devin-portfolio-localstack && aws --endpoint-url=http://localhost:4566 s3 website s3://devin-portfolio-localstack --index-document index.html --error-document index.html",
+    "infra:start-localstack": "cd infrastructure && chmod +x start-localstack.sh && ./start-localstack.sh",
+    "infra:deploy-local": "cd infrastructure && chmod +x deploy-localstack.sh && ./deploy-localstack.sh",
+    "infra:destroy-local": "cd infrastructure && chmod +x destroy-localstack.sh && ./destroy-localstack.sh",
+    "infra:stop-localstack": "cd infrastructure && docker-compose down"
   },
   "browserslist": {
     "production": [
