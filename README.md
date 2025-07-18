@@ -1,6 +1,77 @@
-# Getting Started with Create React App
+# Devin Abreu Portfolio
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A modern React portfolio website built with Create React App, featuring a beautiful UI and AWS CDK infrastructure for deployment.
+
+## Features
+
+- 🎨 Modern, responsive design with Tailwind CSS
+- 🌙 Dark/Light theme toggle
+- 📱 Mobile-first responsive design
+- 🚀 AWS CDK infrastructure for deployment
+- 🐳 LocalStack support for local testing
+- 📧 Contact form with EmailJS integration
+- ⚡ Optimized performance and SEO
+
+## Quick Start
+
+### Prerequisites
+
+- Node.js (v16 or later)
+- Docker (for LocalStack testing)
+- AWS CLI (for AWS deployment)
+- AWS CDK CLI: `npm install -g aws-cdk`
+
+### Development
+
+1. **Install dependencies:**
+   ```bash
+   npm install
+   ```
+
+2. **Start development server:**
+   ```bash
+   npm start
+   ```
+
+3. **Build for production:**
+   ```bash
+   npm run build
+   ```
+
+## AWS Infrastructure with LocalStack Testing
+
+This project includes AWS CDK infrastructure for deploying the portfolio as a static website using S3. You can test the infrastructure locally using LocalStack.
+
+### Quick Infrastructure Testing
+
+1. **Start LocalStack:**
+   ```bash
+   npm run infra:start-localstack
+   ```
+
+2. **Deploy infrastructure:**
+   ```bash
+   npm run infra:deploy-local
+   ```
+
+3. **Access your website:**
+   ```
+   http://devin-portfolio-localstack.s3-website.localhost.localstack.cloud:4566
+   ```
+
+4. **Clean up:**
+   ```bash
+   npm run infra:destroy-local
+   npm run infra:stop-localstack
+   ```
+
+### Manual Infrastructure Steps
+
+For detailed infrastructure setup and deployment instructions, see the [Infrastructure README](./infrastructure/README.md).
+
+## Available Scripts
+
+In the project directory, you can run:
 
 ## Available Scripts
 
@@ -27,7 +98,17 @@ It correctly bundles React in production mode and optimizes the build for the be
 The build is minified and the filenames include the hashes.\
 Your app is ready to be deployed!
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### Infrastructure Scripts
+
+- `npm run infra:start-localstack` - Start LocalStack for testing
+- `npm run infra:deploy-local` - Deploy infrastructure to LocalStack
+- `npm run infra:destroy-local` - Destroy LocalStack infrastructure
+- `npm run infra:stop-localstack` - Stop LocalStack
+
+### Local Deployment Scripts
+
+- `npm run deploy:local` - Deploy built app to LocalStack S3
+- `npm run deploy:local:create` - Create S3 bucket and configure website hosting
 
 ### `npm run eject`
 
