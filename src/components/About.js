@@ -28,12 +28,11 @@ const About = () => {
                   <h3 className="text-2xl font-semibold mb-4 text-primary">My Story</h3>
                   <div className="space-y-4 text-muted-foreground leading-relaxed">
                     <p>{personal.bio}</p>
-                    {/* <p>
-                      With a deep understanding of financial systems and regulatory requirements, 
-                      I bridge the gap between complex business needs and technical solutions. 
-                      My experience spans from building high-frequency trading systems to 
-                      developing customer-facing banking applications.
-                    </p> */}
+                    <p>
+                      With a strong foundation in software engineering and a keen ability to understand 
+                      complex systems, I bridge the gap between business goals and technical execution. 
+                      I adapt quickly across domains to deliver scalable, reliable solutions.
+                    </p>
                     <p>
                       I'm passionate about clean code, system architecture, and continuous learning. 
                       When I'm not coding, you'll find me exploring new technologies and learning new skills.
@@ -57,27 +56,6 @@ const About = () => {
                   </CardContent>
                 </Card>
               </div>
-
-              {/* Contact Info */}
-              {/* <Card className="border-0 shadow-lg hover:shadow-xl transition-shadow duration-300">
-                <CardContent className="p-8">
-                  <h3 className="text-2xl font-semibold mb-4 text-primary">Get In Touch</h3>
-                  <div className="space-y-3">
-                    <div className="flex items-center gap-3">
-                      <span className="text-sm font-medium min-w-[60px]">Email:</span>
-                      <span className="text-muted-foreground">{personal.email}</span>
-                    </div>
-                    <div className="flex items-center gap-3">
-                      <span className="text-sm font-medium min-w-[60px]">Phone:</span>
-                      <span className="text-muted-foreground">{personal.phone}</span>
-                    </div>
-                    <div className="flex items-center gap-3">
-                      <span className="text-sm font-medium min-w-[60px]">Location:</span>
-                      <span className="text-muted-foreground">{personal.location}</span>
-                    </div>
-                  </div>
-                </CardContent>
-              </Card> */}
             </div>
 
             {/* Skills Section */}

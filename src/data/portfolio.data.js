@@ -7,10 +7,10 @@ export const portfolioData = {
     email: "devinabreu99@outlook.com",
     bio: "Passionate software developer with 3+ years of experience building robust, scalable enterprise applications. Committed to writing clean, maintainable code and staying up to date with emerging technologies.",
     skills: [
-      "Java", "Python", "JavaScript", "React", "Node.js", "Spring Boot",
-      "MongoDB", "PostgreSQL", "AWS", "Docker", "Kubernetes", "Git",
-      "REST APIs", "Microservices", "Financial APIs", "Payment Gateways",
-      "Regulatory Compliance", "Security Best Practices"
+      "Java", "Spring Boot", "Spring Batch", "Apache Maven", 
+      "JavaScript", "Typescript", "HTML", "CSS", "Angular", "React", 
+      "Python", "FastAPI", "PostgreSQL", "MongoDB", "Git", "Docker", "AWS", "Kubernetes",
+      "REST APIs", "Microservices", "Object-Oriented Design", "Shell Scripting"
     ],
     socialLinks: {
       linkedin: "https://www.linkedin.com/in/devin-abreu/",
