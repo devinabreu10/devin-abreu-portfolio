@@ -1,0 +1,22 @@
+services:
+  localstack:
+    image: localstack/localstack-pro:latest #localstack/localstack:latest when pro runs out
+    container_name: portfolio-localstack
+    ports:
+      - "4566:4566"            # LocalStack main endpoint
+      - "4510-4559:4510-4559"  # Additional ports for various AWS services
+    environment:
+      - LOCALSTACK_AUTH_TOKEN=${LOCALSTACK_AUTH_TOKEN}
+      - DEBUG=1
+      - DATA_DIR=/tmp/localstack/data
+      - DOCKER_HOST=unix:///var/run/docker.sock
+      - AWS_DEFAULT_REGION=us-east-1
+    volumes:
+      - "${LOCALSTACK_VOLUME_DIR:-./volume}:/var/lib/localstack"
+      - "/var/run/docker.sock:/var/run/docker.sock"
+    networks:
+      - localstack-network
+
+networks:
+  localstack-network:
+    driver: bridge 

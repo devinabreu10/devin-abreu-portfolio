@@ -5,8 +5,14 @@
 .vscode
 .cursor
 
-# dependencies
+# aws infrastructure
+/infrastructure/volume
 /infrastructure/node_modules
+/infrastructure/cdk.context.json
+/infrastructure/cdk.out
+/infrastructure/compiled
+
+# dependencies
 /node_modules
 /.pnp
 .pnp.js
