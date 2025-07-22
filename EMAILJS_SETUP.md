@@ -46,7 +46,7 @@ This message was sent from your portfolio website contact form.
 2. Copy your **Public Key**
 
 ## Step 5: Set Up Environment Variables
-   ```
+
 1. Open `devin-abreu-portfolio/.env` and replace the placeholder values with your actual credentials:
    ```
    REACT_APP_EMAILJS_SERVICE_ID=your_service_id_here
