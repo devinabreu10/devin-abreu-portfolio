@@ -5,7 +5,7 @@ import { Input } from './ui/input';
 import { Textarea } from './ui/textarea';
 import { Label } from './ui/label';
 import { useToast } from '../hooks/use-toast';
-import { Mail, Phone, MapPin, Send, Loader2 } from 'lucide-react';
+import { Mail, MapPin, Send, Loader2 } from 'lucide-react';
 import { portfolioData } from '../data/portfolio.data';
 import emailjs from '@emailjs/browser';
 import { EMAILJS_CONFIG, createEmailParams, validateEmailJSConfig } from '../config/emailjs';
@@ -119,20 +119,6 @@ const Contact = () => {
                   </CardContent>
                 </Card>
 
-                {/* <Card className="border-0 shadow-md hover:shadow-lg transition-shadow duration-300">
-                  <CardContent className="p-6">
-                    <div className="flex items-center space-x-4">
-                      <div className="p-3 bg-primary/10 rounded-lg">
-                        <Phone className="h-6 w-6 text-primary" />
-                      </div>
-                      <div>
-                        <h4 className="font-semibold">Phone</h4>
-                        <p className="text-muted-foreground">{personal.phone}</p>
-                      </div>
-                    </div>
-                  </CardContent>
-                </Card>
-
                 <Card className="border-0 shadow-md hover:shadow-lg transition-shadow duration-300">
                   <CardContent className="p-6">
                     <div className="flex items-center space-x-4">
@@ -145,7 +131,7 @@ const Contact = () => {
                       </div>
                     </div>
                   </CardContent>
-                </Card> */}
+                </Card>
               </div>
 
               {/* Response Time */}
@@ -169,7 +155,7 @@ const Contact = () => {
                   <form onSubmit={handleSubmit} className="space-y-6">
                     <div className="grid md:grid-cols-2 gap-4">
                       <div className="space-y-2">
-                        <Label htmlFor="name">Full Name *</Label>
+                        <Label htmlFor="name">Full Name <span className="text-red-400">*</span></Label>
                         <Input
                           id="name"
                           name="name"
@@ -181,7 +167,7 @@ const Contact = () => {
                         />
                       </div>
                       <div className="space-y-2">
-                        <Label htmlFor="email">Email Address *</Label>
+                        <Label htmlFor="email">Email Address <span className="text-red-400">*</span></Label>
                         <Input
                           id="email"
                           name="email"
@@ -196,7 +182,7 @@ const Contact = () => {
                     </div>
 
                     <div className="space-y-2">
-                      <Label htmlFor="subject">Subject *</Label>
+                      <Label htmlFor="subject">Subject <span className="text-red-400">*</span></Label>
                       <Input
                         id="subject"
                         name="subject"
@@ -209,7 +195,7 @@ const Contact = () => {
                     </div>
 
                     <div className="space-y-2">
-                      <Label htmlFor="message">Message *</Label>
+                      <Label htmlFor="message">Message <span className="text-red-400">*</span></Label>
                       <Textarea
                         id="message"
                         name="message"
