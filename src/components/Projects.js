@@ -32,12 +32,12 @@ const Projects = () => {
               Featured <span className="text-primary">Projects</span>
             </h2>
             <p className="text-xl text-muted-foreground mb-8">
-              Showcasing innovative solutions in financial technology
+              Showcasing innovative solutions in technology
             </p>
             
             {/* Filter Buttons */}
             <div className="flex flex-wrap justify-center gap-2">
-              {['all', 'live', 'development'].map((filterType) => (
+              {['all', 'live', 'development', 'planning'].map((filterType) => (
                 <Button
                   key={filterType}
                   variant={filter === filterType ? 'default' : 'outline'}
@@ -76,20 +76,6 @@ const Projects = () => {
                         {project.status}
                       </div>
                     </div>
-
-                    {/* Hover Actions */}
-                    <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                      <div className="flex gap-3">
-                        <Button size="sm" variant="secondary" className="bg-white/20 backdrop-blur-sm hover:bg-white/30">
-                          <ExternalLink size={16} className="mr-2" />
-                          Live Demo
-                        </Button>
-                        <Button size="sm" variant="secondary" className="bg-white/20 backdrop-blur-sm hover:bg-white/30">
-                          <Github size={16} className="mr-2" />
-                          Code
-                        </Button>
-                      </div>
-                    </div>
                   </div>
 
                   <CardHeader className="pb-4">
@@ -120,7 +106,7 @@ const Projects = () => {
                     <div className="space-y-2">
                       <h4 className="font-semibold text-sm text-primary">Key Features:</h4>
                       <ul className="text-sm text-muted-foreground space-y-1">
-                        {project.features.slice(0, 3).map((feature, idx) => (
+                        {project.features.slice(0, 4).map((feature, idx) => (
                           <li key={idx} className="flex items-center">
                             <div className="w-1.5 h-1.5 bg-primary rounded-full mr-2 flex-shrink-0"></div>
                             {feature}
@@ -131,13 +117,40 @@ const Projects = () => {
 
                     {/* Action Buttons */}
                     <div className="flex gap-2 pt-4">
-                      <Button size="sm" className="flex-1 group/btn">
-                        <ExternalLink size={16} className="mr-2 group-hover/btn:rotate-45 transition-transform duration-300" />
-                        View Project
+                      <Button
+                        asChild
+                        size="sm"
+                        className="flex-1 group/btn"
+                        disabled={!project.demoUrl}
+                      >
+                        <a
+                          href={project.demoUrl ? project.demoUrl : undefined}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          tabIndex={(!project.demoUrl) ? -1 : undefined}
+                          aria-disabled={!project.demoUrl}
+                        >
+                          <ExternalLink size={16} className="mr-2 group-hover/btn:rotate-45 transition-transform duration-300" />
+                          View Project
+                        </a>
                       </Button>
-                      <Button size="sm" variant="outline" className="flex-1">
-                        <Github size={16} className="mr-2" />
-                        Source Code
+                      <Button
+                        asChild
+                        size="sm"
+                        variant="outline"
+                        className="flex-1"
+                        disabled={!project.githubUrl}
+                      >
+                        <a
+                          href={project.githubUrl ? project.githubUrl : undefined}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          tabIndex={(!project.githubUrl) ? -1 : undefined}
+                          aria-disabled={!project.githubUrl}
+                        >
+                          <Github size={16} className="mr-2" />
+                          Source Code
+                        </a>
                       </Button>
                     </div>
                   </CardContent>
@@ -154,25 +167,6 @@ const Projects = () => {
               </p>
             </div>
           )}
-
-          {/* Call to Action */}
-          <div className="text-center mt-16 animate-in fade-in slide-in-from-bottom-4 duration-700 delay-600">
-            <Card className="inline-block border-0 shadow-lg bg-gradient-to-r from-primary/5 to-secondary/5">
-              <CardContent className="p-8">
-                <h3 className="text-2xl font-bold mb-4">Interested in collaborating?</h3>
-                <p className="text-muted-foreground mb-6">
-                  I'm always open to discussing new opportunities and innovative projects.
-                </p>
-                <Button 
-                  size="lg" 
-                  onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
-                  className="bg-primary hover:bg-primary/90"
-                >
-                  Let's Work Together
-                </Button>
-              </CardContent>
-            </Card>
-          </div>
         </div>
       </div>
     </section>
