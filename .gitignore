@@ -12,6 +12,10 @@
 /infrastructure/cdk.out
 /infrastructure/compiled
 
+# fastapi email service
+/fastapi-email-service/.venv
+__pycache__
+
 # dependencies
 /node_modules
 /.pnp

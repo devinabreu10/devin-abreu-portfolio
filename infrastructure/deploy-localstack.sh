@@ -37,7 +37,9 @@ cdklocal bootstrap aws://000000000000/us-east-1
 
 # Deploy the stack to LocalStack
 echo "🚀 Deploying stack to LocalStack..."
-cdklocal deploy --context useLocalStack=true
+cdklocal deploy --context useLocalStack=true --all
+# cdklocal deploy --context useLocalStack=true PortfolioInfrastructureStack
+# cdklocal deploy --context useLocalStack=true ECSFargateEmailServiceStack
 
 echo "✅ Deployment complete!"
 echo ""
@@ -45,4 +47,4 @@ echo "📋 To view the stack outputs:"
 echo "   cdklocal list"
 echo ""
 echo "🗑️  To destroy the stack:"
-echo "   cdklocal destroy --context useLocalStack=true" 
+echo "   cdklocal destroy --context useLocalStack=true <stack-name>" 

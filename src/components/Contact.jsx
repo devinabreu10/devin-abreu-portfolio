@@ -29,47 +29,66 @@ const Contact = () => {
     }));
   };
 
+  const EMAIL_PROVIDER = process.env.REACT_APP_EMAIL_PROVIDER || 'emailjs';
+
+  const sendWithFastAPI = async (formData) => {
+    const apiUrl = process.env.REACT_APP_FASTAPI_EMAIL_URL || 'http://localhost:8080/send-email';
+    const payload = {
+      to: personal.email,
+      subject: formData.subject,
+      message: `<b>From:</b> ${formData.name} (${formData.email})<br/><br/>${formData.message}`,
+    };
+    const response = await fetch(apiUrl, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(payload),
+    });
+    if (!response.ok) {
+      throw new Error('FastAPI email service error');
+    }
+    return response.json();
+  };
+
   const handleSubmit = async (e) => {
     e.preventDefault();
     setIsSubmitting(true);
 
     try {
-      // Validate EmailJS configuration
-      if (!validateEmailJSConfig()) {
-        throw new Error('EmailJS configuration is incomplete');
-      }
-
-      // Create email parameters using the helper function
-      const templateParams = createEmailParams(formData, personal.name);
-
-      // Send email using EmailJS
-      const result = await emailjs.send(
-        EMAILJS_CONFIG.SERVICE_ID,
-        EMAILJS_CONFIG.TEMPLATE_ID,
-        templateParams,
-        EMAILJS_CONFIG.PUBLIC_KEY
-      );
-      
-      if (result.status === 200) {
+      if (EMAIL_PROVIDER === 'fastapi') {
+        await sendWithFastAPI(formData);
         toast({
-          title: "Message Sent Successfully!",
+          title: 'Message Sent Successfully!',
           description: "Thank you for reaching out. I'll get back to you soon!",
         });
-        
-        // Reset form
-        setFormData({
-          name: '',
-          email: '',
-          subject: '',
-          message: ''
-        });
+        setFormData({ name: '', email: '', subject: '', message: '' });
+      } else {
+        // Validate EmailJS configuration
+        if (!validateEmailJSConfig()) {
+          throw new Error('EmailJS configuration is incomplete');
+        }
+        // Create email parameters using the helper function
+        const templateParams = createEmailParams(formData, personal.name);
+        // Send email using EmailJS
+        const result = await emailjs.send(
+          EMAILJS_CONFIG.SERVICE_ID,
+          EMAILJS_CONFIG.TEMPLATE_ID,
+          templateParams,
+          EMAILJS_CONFIG.PUBLIC_KEY
+        );
+        if (result.status === 200) {
+          toast({
+            title: 'Message Sent Successfully!',
+            description: "Thank you for reaching out. I'll get back to you soon!",
+          });
+          setFormData({ name: '', email: '', subject: '', message: '' });
+        }
       }
     } catch (error) {
-      console.error('EmailJS Error:', error);
+      console.error('Email Error:', error);
       toast({
-        title: "Error Sending Message",
-        description: "Failed to send message. Please try again or contact me directly.",
-        variant: "destructive",
+        title: 'Error Sending Message',
+        description: 'Failed to send message. Please try again or contact me directly.',
+        variant: 'destructive',
       });
     } finally {
       setIsSubmitting(false);
