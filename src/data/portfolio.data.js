@@ -34,7 +34,7 @@ export const portfolioData = {
       image: "/rp0-bank-homepage.png",
       demoUrl: "https://rp0-bankapp-ui.onrender.com/",
       githubUrl: "https://github.com/devinabreu10/p0-bankapp-remake",
-      status: "Live"
+      status: "Development"
     },
     {
       id: 2,
@@ -52,7 +52,7 @@ export const portfolioData = {
       image: "https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?w=800&h=600&fit=crop",
       demoUrl: "https://devin-abreu-portfolio.netlify.app/",
       githubUrl: "https://github.com/devinabreu10/devin-abreu-portfolio",
-      status: "Development"
+      status: "Live"
     },
     {
       id: 3,
