@@ -33,19 +33,19 @@ export const portfolioData = {
       ],
       image: "/rp0-bank-homepage.png",
       demoUrl: "https://rp0-bankapp-ui.onrender.com/",
-      githubUrl: "https://github.com/devinabreu10/p0-bankapp-remake",
-      status: "Development"
+      githubUrl: "https://github.com/devinabreu10/rp0-bankapp-ui",
+      status: "Live"
     },
     {
       id: 2,
       title: "Personal Portfolio",
       description: "A modern, responsive personal portfolio website showcasing my software development skills and projects. Built with React and styled with Tailwind CSS, featuring theme toggle, smooth animations, and contact form integration.",
-      technologies: ["JavaScript", "React", "Tailwind CSS", "AWS CDK", "EmailJS", "Netlify"],
+      technologies: ["JavaScript", "React", "Tailwind CSS", "AWS CDK", "EmailJS", "Python"],
       features: [
         "Responsive design with mobile-first approach",
         "Smooth scroll animations and transitions",
-        "Infrastructure as Code (IaC) for AWS S3 deployment",
-        "Contact form with EmailJS integration",
+        "Infrastructure as Code (IaC) for AWS S3 and ECS Fargate deployment",
+        "Contact form with EmailJS or Python Email Service integration",
         "Dark/light theme toggle functionality",
         "Deployed on Netlify with CI/CD",
       ],

@@ -34,8 +34,9 @@ const About = () => {
                       I adapt quickly across domains to deliver scalable, reliable solutions.
                     </p>
                     <p>
-                      I'm passionate about clean code, system architecture, and continuous learning. 
-                      When I'm not coding, you'll find me exploring new technologies and learning new skills.
+                      Beyond coding, I’m driven by curiosity and a love for problem-solving, from dissecting 
+                      how systems work to experimenting with new tools and frameworks. 
+                      I’m always looking for ways to grow, both as a developer and a creative thinker.
                     </p>
                   </div>
                 </CardContent>
