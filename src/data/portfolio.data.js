@@ -2,7 +2,7 @@
 export const portfolioData = {
   personal: {
     name: "Devin Abreu",
-    title: "Software Developer",
+    title: "Software Engineer",
     industry: "Full-Stack Development",
     email: "devinabreu99@outlook.com",
     location: "Houston, TX",
@@ -32,7 +32,7 @@ export const portfolioData = {
         "Transaction history and analytics"
       ],
       image: "/rp0-bank-homepage.png",
-      demoUrl: "https://rp0-bankapp-ui.onrender.com/",
+      demoUrl: "https://rp0-banking.netlify.app/",
       githubUrl: "https://github.com/devinabreu10/rp0-bankapp-ui",
       status: "Live"
     },
